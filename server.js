@@ -94,7 +94,7 @@ client.unload = command => {
 };
 
 client.on("message", async message => {
-  if (message.author.id == "404206792005124096") {
+  if (message.author.id == "586460745164914688") {
     if (message.content === "gir") {
       client.emit(
         "guildMemberAdd",
@@ -107,7 +107,7 @@ client.on("message", async message => {
 });
 
 client.on("message", async message => {
-  if (message.author.id == "404206792005124096") {
+  if (message.author.id == "586460745164914688") {
     if (message.content === "çık") {
       client.emit(
         "guildMemberRemove",
@@ -119,38 +119,8 @@ client.on("message", async message => {
   }
 });
 
-client.on("ready", () => {
-  setInterval(() => {
-    client.channels
-      .get(`662962152788983808`)
-      .setName(`Sunucular; ${client.guilds.size.toLocaleString()}`);
-    client.channels.get(`662962169809207297`).setName(
-      `Kullanıcılar;
-        ${client.guilds
-          .reduce((a, b) => a + b.memberCount, 0)
-          .toLocaleString()}`
-    );
-    client.channels
-      .get(`662962219021107211`)
-      .setName(`Ping; ${client.ping}ms!`);
-  }, 5000);
-});
 
-client.on("ready", () => {
-  setInterval(() => {
-    let botdurum = client.channels.find(c => c.id === "662963782900908073");
-    const botistatistik = new Discord.RichEmbed()
-      .setColor("GREEN")
-      .addField(`Sunucular`, `${client.guilds.size.toLocaleString()}`)
-      .addField(
-        `Kullanıcılar`,
-        client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()
-      )
-      .addField(`Ping`, `${client.ping}`)
-      .setTimestamp();
-    botdurum.send(botistatistik);
-  }, 30000);
-});
+
 //////////////////////////////////////////////////////////////////////////////
 client.on("channelDelete", async channel => {
   let kanal = await db.fetch(`kkk_${channel.guild.id}`);
