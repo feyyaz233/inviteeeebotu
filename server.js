@@ -381,7 +381,7 @@ client.on("guildMemberRemove", async member => {
         `\`\`${member.user.tag}\`\` **adlı şahıs aramızdan ayrıldı.\nŞahsı davet eden:** \`\`Bulunamadı!\`\``
       )
       .setFooter(client.user.username, client.user.avatarURL);
-    client.channels.get(kanal).send(aa);
+    client.channels.get(kanal).send(`**${member.user.tag}** adlı kullanıcı aramızdan ayrıldı.\nKullanıcıyı davet eden: **Bulunamadı!**`);
     return;
   } else {
     const aa = new Discord.RichEmbed()
@@ -390,7 +390,7 @@ client.on("guildMemberRemove", async member => {
         `\`\`${member.user.tag}\`\` **adlı şahıs aramızdan ayrıldı.\nŞahsı davet eden:** \`\`${sa.tag}\`\``
       )
       .setFooter(client.user.username, client.user.avatarURL);
-    client.channels.get(kanal).send(aa);
+    client.channels.get(kanal).send(`**${member.user.tag}** adlı kullanıcı aramızdan ayrıldı.\nKullanıcıyı davet eden: **${sa.tag}**`);
 
     if (!veri) return;
 
@@ -443,7 +443,7 @@ client.on("guildMemberAdd", async member => {
         `\`\`${member.user.tag}\`\` **adlı şahıs sunucuya katıldı.\nŞahsı davet eden:** \`\`${davetçi.tag}\`\`\n**Toplam \`\`${sayı2}\`\` daveti oldu!**`
       )
       .setFooter(client.user.username, client.user.avatarURL);
-    client.channels.get(kanal).send(aa);
+    client.channels.get(kanal).send(`**${member.user.tag}** adlı kullanıcı aramıza katıldı.\nKullanıcıyı davet eden: **${davetçi.tag}**\nToplam **${sayı2}** daveti oldu!`);
     if (!veri) return;
 
     if (!sasad.roles.has(veri)) {
