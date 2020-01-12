@@ -77,7 +77,7 @@ exports.run = async (client, message, args, tools) => {
 exports.conf = {
   enabled: true,
   guildOnly: true,
-  aliases: ["davetk", "davetlerim"],
+  aliases: ["invites", "davetlerim"],
   permLevel: 0
 };
 
