@@ -1,6 +1,19 @@
 const keep_alive = require("./keep_alive.js"); //index.js Const Kısımlarına
 
-var http = require("http");
+const http = require('http');
+const express = require('express');
+const app = express();
+app.get("/", (request, response) => {
+  console.log("Botu açık tutmak için yeniden bağlandım!");
+  response.sendStatus(200);
+});
+app.listen(8000);
+setInterval(() => {
+  http.get(`http://invitebotts.glitch.me/`);//Buraya glitch linkinizi doğru şekilde giriniz. ve Botunuz 7/24 olacaktır!
+}, 280000)
+
+
+
 
 http
   .createServer(function(req, res) {
