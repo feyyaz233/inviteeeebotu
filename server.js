@@ -134,6 +134,9 @@ client.on("message", async message => {
 
 
 
+
+
+
 //////////////////////////////////////////////////////////////////////////////
 client.on("channelDelete", async channel => {
   let kanal = await db.fetch(`kkk_${channel.guild.id}`);
